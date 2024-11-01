@@ -1,0 +1,125 @@
+<p-toast></p-toast>
+<div class="grid">
+
+
+    <!-- sol Kisim start-->
+    <div class="col-12 md:col-6">
+        <div class="card">
+            <h5>Hotel Seciniz</h5>
+            <div class="">
+                <p-listbox 
+                    [options]="hotels" 
+                    [(ngModel)]="selectedHotel" 
+                    optionLabel="hotelName" 
+                    [filter]="true" 
+                    (onClick)="onSelectHotel($event)"
+                    [listStyle]="{'max-height': '350px'}"
+                    />
+            </div>
+           
+        </div>
+
+        
+    </div>
+ <!-- sol Kisim end-->
+
+  <!-- sag Kisim start -->
+    <div class="col-12 md:col-6">
+        <div class="card">
+            <h5>Tarih Seciniz</h5>
+            <div class="card " >
+                <label for="icondisplay" class="font-bold block mb-2"> Start Date </label>
+                <p-calendar 
+                
+                [(ngModel)]="startDate" 
+                [iconDisplay]="'input'" 
+                [showIcon]="true" 
+                inputId="icondisplay" 
+                (onSelect)="onSelectedStartDate($event)"/>
+                
+            </div>
+            <div class="card " >
+                <label for="icondisplay" class="font-bold block mb-2"> End Date </label>
+                <p-calendar 
+                
+                [(ngModel)]="endDate" 
+                [iconDisplay]="'input'" 
+                [showIcon]="true" 
+                inputId="icondisplay" 
+                (onSelect)="onSelectedEndDate($event)"/>
+                
+            </div>
+
+            
+        </div>
+
+       
+
+
+
+        <div class="card flex justify-content-center">
+            <div class="flex flex-wrap gap-3">
+
+                <div *ngFor="let filter of filters" class="field-checkbox">
+                    <p-radioButton 
+                        [inputId]="filter.key" 
+                        name="filter" 
+                        [value]="filter" 
+                        [(ngModel)]="selectedFilter" />
+                    <label [for]="filter.key" class="ml-2">
+                        {{ filter.name }}
+                    </label>
+                </div>
+
+               
+               
+                
+                
+               
+            </div>
+        </div>
+        <p-button label="Rate Check Rapurunu Getir" (onClick)="getRateCheckReport()"/>
+    </div>
+  <!-- sag Kisim end -->
+  
+    <!-- alt Kisim table start-->
+  
+
+    <div class="col-12">
+        <div class="card">
+            <h5></h5>
+
+           
+                <p-table [value]="rates" [tableStyle]="{ 'min-width': '50rem' }">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Room Type</th>
+                            <th>B2B</th>
+                            <th>Web Beds</th>
+                            <th>Our Best Price</th>
+                            <th>Other to Price</th>
+                            <th>Diff €</th>
+                            <th>Diff %</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-ratesDto>
+                        <tr>
+                            <td>{{ ratesDto.roomType }}</td>
+                            <td>{{ ratesDto.b2B }}</td>
+                            <td>{{ ratesDto.webBeds }}</td>
+                            <td>{{ ratesDto.ourBestPrice }}</td>
+                            <td>{{ ratesDto.otherToPrice }}</td>
+                            <td>{{ ratesDto.diffEuro }}</td>
+                            <td>{{ ratesDto.diffPercent }}</td>
+                        
+                        </tr>
+                    </ng-template>
+                </p-table>
+            
+            
+
+        </div>
+    </div>
+
+    <!-- alt Kisim table end-->
+</div>
