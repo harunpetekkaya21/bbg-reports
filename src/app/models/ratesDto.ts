@@ -1,5 +1,5 @@
 export interface ratesDto{
-    id?:number,
+    //id?:number,
     startDate?:string,
     endDate?:string,
     roomType?:string,

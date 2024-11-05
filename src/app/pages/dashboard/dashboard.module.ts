@@ -11,6 +11,12 @@ import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { StyleClassModule } from 'primeng/styleclass';
 import { PanelMenuModule } from 'primeng/panelmenu';
+import { DialogModule } from 'primeng/dialog';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { RippleModule } from 'primeng/ripple';
+import { FileUploadModule } from 'primeng/fileupload';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
@@ -25,7 +31,15 @@ import { PanelMenuModule } from 'primeng/panelmenu';
         StyleClassModule,
         PanelMenuModule,
         ButtonModule,
-        DashboardRoutingModule
+        DashboardRoutingModule,
+        DialogModule,
+        FileUploadModule,
+        ButtonModule,
+        RippleModule,
+        DropdownModule,
+        InputNumberModule,
+        InputTextModule ,
+     
   ]
 })
 export class DashboardModule { }

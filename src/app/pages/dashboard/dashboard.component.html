@@ -1,1 +1,81 @@
-<p>Dashboard</p>
+<div class="card">
+    <h5>Hizli Menu</h5>
+    <div class="flex flex-wrap gap-2">
+        <button pButton pRipple type="button" label="Rate-Check Reports" routerLink="/reports/rate-check"
+        routerLinkActive="active"></button>
+        <button pButton pRipple type="button" label="Upload Rate-Check Excel" class="p-button-success" (click)="openUploadFileDialog()"></button>
+        <button pButton pRipple type="button" label="Sales Reports" class="p-button-warning" routerLink="/reports/sales"
+        routerLinkActive="active"></button>
+       
+         <button pButton pRipple type="button" label="Destinations Reports" class="p-button-info"></button> 
+
+    </div>
+</div>
+
+
+<div class="grid">
+    <div class="col-12 lg:col-6 xl:col-3">
+        <div class="card mb-0">
+            <div class="flex justify-content-between mb-3">
+                <div>
+                    <span class="block text-800 font-large mb-3">Rate-Check Report</span>
+                   
+                </div>
+                <div class="flex align-items-center justify-content-center  border-round" [ngStyle]="{width: '2.5rem', height: '2.5rem'}">
+                    <i class="pi pi-check  text-2xl"style="color: green"></i>
+                </div>
+            </div>
+            <span class="text-green-500 font-medium" [(ngModel)]="rateCheckLastUpdatedDate">{{rateCheckLastUpdatedDate}} </span>
+            <span class="text-500">last updated</span>
+        </div>
+    </div>
+    
+
+</div>
+
+
+
+<p-dialog [(visible)]="rateCheckUploadDialog"  header="Upload Rate-Check Excel" [modal]="true" class="p-fluid">
+    <ng-template pTemplate="content">
+       
+       
+        <div class="field">
+            <div class="card">
+            
+                <p-fileUpload 
+                mode="basic" 
+                chooseLabel="Choose" 
+                chooseIcon="pi pi-upload"
+                name="demo[]" 
+                url="https://www.primefaces.org/cdn/api/upload.php" 
+                accept=".xlsx" 
+                maxFileSize="1000000" 
+                (onUpload)="onUpload($event)" />
+            </div>
+          
+      
+            <div class="flex flex-column gap-2">
+                <label for="username">File Description</label>
+                <input 
+                    pInputText 
+                    id="fileDescription" 
+                    aria-describedby="fileDescription-help" 
+                    [(ngModel)]="fileDescription" />
+                <small id="fileDescription-help">
+                    Enter your file description.
+                </small>
+            </div>
+            
+        </div>
+        
+
+       
+      
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+       
+
+    </ng-template>
+</p-dialog>

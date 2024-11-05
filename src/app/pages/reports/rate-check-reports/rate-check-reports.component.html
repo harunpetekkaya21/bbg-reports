@@ -1,13 +1,15 @@
-<p-toast></p-toast>
+<!-- <p-toast></p-toast> -->
+<p-button (onClick)="clear()"   pRipple type="button" label="Clear" class="p-button-warning" /> 
 <div class="grid">
 
 
     <!-- sol Kisim start-->
-    <div class="col-12 md:col-6">
+    <div class="col-12 md:col-6 ">
         <div class="card">
             <h5>Hotel Seciniz</h5>
             <div class="">
                 <p-listbox 
+                #myListbox
                     [options]="hotels" 
                     [(ngModel)]="selectedHotel" 
                     optionLabel="hotelName" 
@@ -19,12 +21,29 @@
            
         </div>
 
+        <div class="card">
+            <h5>Oda Seciniz</h5>
+            <div class="">
+                <p-listbox 
+                    [options]="rooms" 
+                    [(ngModel)]="selectedRoom" 
+                    optionLabel="roomType" 
+                    [filter]="true" 
+                    (onClick)="onSelectRoom($event)"
+                    [listStyle]="{'max-height': '350px'}"
+                    />
+            </div>
+           
+        </div>
+        
+        
+
         
     </div>
  <!-- sol Kisim end-->
 
   <!-- sag Kisim start -->
-    <div class="col-12 md:col-6">
+    <!-- <div class="col-12 md:col-6">
         <div class="card">
             <h5>Tarih Seciniz</h5>
             <div class="card " >
@@ -79,8 +98,29 @@
             </div>
         </div>
         <p-button label="Rate Check Rapurunu Getir" (onClick)="getRateCheckReport()"/>
+    </div> -->
+    <div class="col-12 md:col-6 ">
+        <div class="card">
+            <h5>Tarih Seciniz</h5>
+            <div class="">
+                <p-listbox 
+                    [options]="dates" 
+                    [(ngModel)]="selectedDate" 
+                    optionLabel="date" 
+                    [filter]="true" 
+                    (onClick)="onSelectDate($event)"
+                    [listStyle]="{'max-height': '350px'}"
+                    />
+            </div>
+           
+        </div>
+        
+
+        
     </div>
-  <!-- sag Kisim end -->
+    
+ 
+    <!-- sag Kisim end -->
   
     <!-- alt Kisim table start-->
   
