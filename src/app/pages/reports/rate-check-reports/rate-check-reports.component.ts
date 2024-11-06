@@ -7,6 +7,7 @@ import { listRateDatesDto } from 'src/app/models/listRateDatesDto';
 import { Router } from '@angular/router';
 import { Listbox } from 'primeng/listbox';
 import { listRoomsDto } from 'src/app/models/listRoomsDto';
+import { ratesDto2 } from 'src/app/models/ratesDto2';
 
 
 
@@ -20,7 +21,7 @@ export class RateCheckReportsComponent implements OnInit {
   @ViewChild('myListbox') myListboxComponent: Listbox;
   //rates
   rates: ratesDto[];
-
+  //rates2:ratesDto2[];
 
   //radio buttons 
 
@@ -118,6 +119,7 @@ export class RateCheckReportsComponent implements OnInit {
     this.selectedRoom = $event.option;
 
     let dates=this.selectedDate.date.split("|");
+    
     this.rateCheckService.getRatesByRoomAndHotelAndDates(this.selectedHotel.id, dates[0], dates[1],this.selectedRoom.roomType).then(data => this.rates = data);
 
 
