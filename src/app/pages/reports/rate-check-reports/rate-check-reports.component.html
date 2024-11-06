@@ -145,10 +145,10 @@
                     <ng-template pTemplate="body" let-ratesDto>
                         <tr>
                             <td>{{ ratesDto.roomType }}</td>
-                            <td>{{ ratesDto.b2B }}</td>
-                            <td>{{ ratesDto.webBeds }}</td>
-                            <td>{{ ratesDto.ourBestPrice }}</td>
-                            <td>{{ ratesDto.otherToPrice }}</td>
+                            <td>{{ ratesDto.b2B }} €</td>
+                            <td>{{ ratesDto.webBeds }} €</td>
+                            <td>{{ ratesDto.ourBestPrice }} €</td>
+                            <td>{{ ratesDto.otherToPrice }} €</td>
                             <td>{{ ratesDto.diffEuro| number : '1.0-2' }} €</td>
                             <td>{{ ratesDto.diffPercent | percent:'1.0-2' }} </td>
                         
