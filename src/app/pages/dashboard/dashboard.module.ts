@@ -17,6 +17,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { RippleModule } from 'primeng/ripple';
 import { FileUploadModule } from 'primeng/fileupload';
 import { InputTextModule } from 'primeng/inputtext';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { InputTextModule } from 'primeng/inputtext';
         DropdownModule,
         InputNumberModule,
         InputTextModule ,
+        NgxSpinnerModule,
+        ToastModule
      
   ]
 })

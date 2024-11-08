@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AppLayoutModule } from './layout/app.layout.module';
 import { LocationStrategy,PathLocationStrategy } from '@angular/common';
 import { NotfoundComponent } from './shared/components/notfound/notfound.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { NotfoundComponent } from './shared/components/notfound/notfound.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AppLayoutModule
+    AppLayoutModule,
+    NgxSpinnerModule,
   ],
   providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy }],
   bootstrap: [AppComponent]
