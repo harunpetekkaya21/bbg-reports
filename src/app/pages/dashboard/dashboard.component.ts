@@ -145,7 +145,8 @@ export class DashboardComponent implements OnInit {
           roomNights: this.salesFromFile[i][4],
           paxes: this.salesFromFile[i][5],
           reservationsCount: this.salesFromFile[i][6],
-          date: this.salesFromFile[i][7]
+          date: this.salesFromFile[i][7],
+          
         })
 
 
@@ -184,6 +185,11 @@ export class DashboardComponent implements OnInit {
    let jdata= JSON.stringify(this.salesFromFileDTO).replaceAll("€","");
    mydata=JSON.parse(jdata);
     this.spinner.show();
+    console.log("mydata");
+    console.log(mydata);
+    
+    console.log("mydata");
+    
     this.saleService.uploadSaleDataFromFile(mydata).subscribe(() => {
     this.spinner.hide()
     this.messageService.add({ severity: 'success', summary: 'Sales Raporu Basarili Bir Sekilde Yuklendi !!', });
