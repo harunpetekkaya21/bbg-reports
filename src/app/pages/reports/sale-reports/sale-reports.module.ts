@@ -6,6 +6,8 @@ import { SaleReportsComponent } from './sale-reports.component';
 import { CalendarModule } from 'primeng/calendar';
 import { FormsModule } from '@angular/forms';
 import { ChartModule } from 'primeng/chart';
+import { RippleModule } from 'primeng/ripple';
+import { ToastModule } from 'primeng/toast';
 
 
 @NgModule({
@@ -17,8 +19,10 @@ import { ChartModule } from 'primeng/chart';
     SaleReportsRoutingModule,
     CalendarModule ,
     FormsModule,
-    ChartModule
-    
+    ChartModule,
+    RippleModule,
+    ToastModule
+ 
   ]
 })
 export class SaleReportsModule { }

@@ -5,11 +5,12 @@ import { debounceTime, Subscription } from 'rxjs';
 import { LayoutService } from '../../../layout/service/app.layout.service';
 import { salesByDateDTO } from '../../../models/salesByDateDTO';
 import { SalesService } from '../../../shared/service/sales.service';
+import { Message, MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-sale-reports',
   templateUrl: './sale-reports.component.html',
-
+  providers: [MessageService]
 
 })
 export class SaleReportsComponent implements OnInit, OnDestroy {
@@ -29,7 +30,7 @@ export class SaleReportsComponent implements OnInit, OnDestroy {
 
 
 
-  constructor(private layoutService: LayoutService,private salesService:SalesService) {
+  constructor(private layoutService: LayoutService,private salesService:SalesService,private messageService: MessageService) {
 
     this.subscription = this.layoutService.configUpdate$
       .pipe(debounceTime(25))
@@ -131,7 +132,19 @@ export class SaleReportsComponent implements OnInit, OnDestroy {
   }
 
   getSales(){
-    this.salesService.getSalesByDate(this.selectedDate).then(data => this.sale=data);
+    this.salesService.getSalesByDate(this.selectedDate).then(data => 
+    {
+      if (data==undefined) {
+        
+        this.messageService.add({ severity: 'warn', summary: 'Aradiginiz tarihe gore bir rapor bulunamadi !!', });
+      
+      }
+      else{
+        this.sale=data
+      }
+    }
+     
+    )
     
   }
 }
