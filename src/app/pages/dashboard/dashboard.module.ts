@@ -19,6 +19,7 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { InputTextModule } from 'primeng/inputtext';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ToastModule } from 'primeng/toast';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -36,13 +37,16 @@ import { ToastModule } from 'primeng/toast';
         DashboardRoutingModule,
         DialogModule,
         FileUploadModule,
-        ButtonModule,
+        
         RippleModule,
         DropdownModule,
         InputNumberModule,
         InputTextModule ,
         NgxSpinnerModule,
-        ToastModule
+        ToastModule,
+        RouterModule.forChild([
+          { path: "", component: DashboardComponent }
+        ])
      
   ]
 })

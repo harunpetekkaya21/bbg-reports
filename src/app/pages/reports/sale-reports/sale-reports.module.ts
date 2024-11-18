@@ -8,11 +8,18 @@ import { FormsModule } from '@angular/forms';
 import { ChartModule } from 'primeng/chart';
 import { RippleModule } from 'primeng/ripple';
 import { ToastModule } from 'primeng/toast';
+import { DailyComponent } from './daily/daily.component';
+import { WeeklyComponent } from './weekly/weekly.component';
+import { MonthlyComponent } from './monthly/monthly.component';
 
 
 @NgModule({
   declarations: [
-    SaleReportsComponent
+    SaleReportsComponent,
+    DailyComponent,
+    WeeklyComponent,
+    MonthlyComponent,
+
   ],
   imports: [
     CommonModule,

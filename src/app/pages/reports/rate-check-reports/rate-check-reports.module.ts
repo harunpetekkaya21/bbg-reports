@@ -10,10 +10,26 @@ import { TableModule } from 'primeng/table';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
+import { WinterTop10Component } from './season/winter/winter-top-10/winter-top-10.component';
+import { WinterTop20Component } from './season/winter/winter-top-20/winter-top-20.component';
+import { WinterTop50Component } from './season/winter/winter-top-50/winter-top-50.component';
+import { SummerTop10Component } from './season/summer/summer-top-10/summer-top-10.component';
+import { SummerTop20Component } from './season/summer/summer-top-20/summer-top-20.component';
+import { SummerTop50Component } from './season/summer/summer-top-50/summer-top-50.component';
+
+
+
 
 @NgModule({
   declarations: [
-    RateCheckReportsComponent
+    RateCheckReportsComponent,
+    WinterTop10Component,
+    WinterTop20Component,
+    WinterTop50Component,
+    SummerTop10Component,
+    SummerTop20Component,
+    SummerTop50Component,
+
   ],
   imports: [
     CommonModule,
@@ -24,7 +40,9 @@ import { ToastModule } from 'primeng/toast';
     TableModule ,
     RadioButtonModule ,
     ToastModule,
-    ButtonModule
+    ButtonModule,
+
+    
 
   ]
 })

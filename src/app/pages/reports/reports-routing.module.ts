@@ -8,6 +8,7 @@ const routes: Routes = [];
     { path: 'rate-check', loadChildren: () => import('./rate-check-reports/rate-check-reports.module').then(m => m.RateCheckReportsModule) },
     { path: 'sales', loadChildren: () => import('./sale-reports/sale-reports.module').then(m => m.SaleReportsModule) },
     
+    
     { path: '**', redirectTo: '/notfound' }
 ])],
   exports: [RouterModule]
